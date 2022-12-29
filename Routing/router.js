@@ -93,6 +93,49 @@ router.post("/register",async(req,rsp)=>{
                 console.log(error);
             }
         })
+
+
+        // update user info
+        router.patch("/updateuser/:id",async(req,rsp)=>{
+
+            console.log("in router update function");
+            try{       
+                console.log(req.params);
+                const {id}= req.params;
+
+                const updateduser = await Users.findByIdAndUpdate(id,req.body,{
+                    new:true
+                });
+                console.log(updateduser);
+                rsp.status(201).json(updateduser)
+            }
+            catch(error)
+            {
+                //console.log("error in catch getdata");
+                console.log(error);
+                rsp.status(422).json(error);
+                console.log(error);
+            }
+        })
+
+         // Delete user
+         router.delete("/deleteuser/:id",async(req,rsp)=>{
+            try{       
+                console.log("in Delete user");
+                const {id}= req.params;
+
+                const deleteuser = await Users.findByIdAndDelete({_id:id});
+                console.log(deleteuser);
+                rsp.status(201).json(deleteuser)
+            }
+            catch(error)
+            {
+                //console.log("error in catch getdata");
+                console.log(error);
+                rsp.status(422).json(error);
+                console.log(error);
+            }
+        })
 module.exports = router;
 
 
