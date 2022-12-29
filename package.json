@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -11,9 +12,20 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "mongoose": "^6.4.4",
     "npm-git-install": "^0.3.0"
   },
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khushboo280289/server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Khushboo280289/server/issues"
+  },
+  "homepage": "https://github.com/Khushboo280289/server#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
